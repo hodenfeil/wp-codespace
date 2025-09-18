@@ -1,0 +1,27 @@
+[11-Sep-2025 07:18:55 UTC] PHP Warning:  wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp\htdocs\flatsome_v01\wp-includes\functions.php on line 6121
+[12-Sep-2025 09:32:49 UTC] PHP Warning:  Undefined array key "data" in C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php on line 115
+[12-Sep-2025 09:32:49 UTC] PHP Warning:  Undefined array key "quantity" in C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php on line 116
+[12-Sep-2025 09:32:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_price() on null in C:\xampp\htdocs\flatsome_v01\wp-content\plugins\woocommerce\includes\class-wc-cart.php:2173
+Stack trace:
+#0 C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php(116): WC_Cart->get_product_subtotal(NULL, NULL)
+#1 C:\xampp\htdocs\flatsome_v01\wp-includes\class-wp-hook.php(324): flatsome_child_update_cart_item('')
+#2 C:\xampp\htdocs\flatsome_v01\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\flatsome_v01\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\flatsome_v01\wp-admin\admin-ajax.php(192): do_action('wp_ajax_flatsom...')
+#5 {main}
+  thrown in C:\xampp\htdocs\flatsome_v01\wp-content\plugins\woocommerce\includes\class-wc-cart.php on line 2173
+[12-Sep-2025 09:32:50 UTC] PHP Warning:  Undefined array key "data" in C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php on line 115
+[12-Sep-2025 09:32:50 UTC] PHP Warning:  Undefined array key "quantity" in C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php on line 116
+[12-Sep-2025 09:32:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_price() on null in C:\xampp\htdocs\flatsome_v01\wp-content\plugins\woocommerce\includes\class-wc-cart.php:2173
+Stack trace:
+#0 C:\xampp\htdocs\flatsome_v01\wp-content\themes\flatsome-child\functions.php(116): WC_Cart->get_product_subtotal(NULL, NULL)
+#1 C:\xampp\htdocs\flatsome_v01\wp-includes\class-wp-hook.php(324): flatsome_child_update_cart_item('')
+#2 C:\xampp\htdocs\flatsome_v01\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\flatsome_v01\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\flatsome_v01\wp-admin\admin-ajax.php(192): do_action('wp_ajax_flatsom...')
+#5 {main}
+  thrown in C:\xampp\htdocs\flatsome_v01\wp-content\plugins\woocommerce\includes\class-wc-cart.php on line 2173
+[12-Sep-2025 10:03:04 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\flatsome_v01\wp-includes\class-wpdb.php on line 2351
+[12-Sep-2025 10:06:49 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\flatsome_v01\wp-includes\class-wpdb.php on line 2351
+[12-Sep-2025 10:06:54 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\flatsome_v01\wp-includes\class-wpdb.php on line 2351
+[12-Sep-2025 10:06:54 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\flatsome_v01\wp-includes\class-wpdb.php on line 2351

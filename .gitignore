@@ -8,21 +8,24 @@ npm-debug.log
 package-lock.json
 composer.lock
 
-# WordPress çekirdek ve wp-content genel ignore
+# WordPress çekirdeği ve içerik dizini genel ignore
 wordpress/*
+!wordpress/wp-admin/
+!wordpress/wp-includes/
 !wordpress/wp-content/
-wordpress/wp-content/*
-!wordpress/wp-content/themes/
-!wordpress/wp-content/plugins/
 
-# Sadece belirli temalar (dahil etmek istediklerinizi burada belirtin)
+# Tüm admin ve includes altı dahil (gerekli!)
+!wordpress/wp-admin/**
+!wordpress/wp-includes/**
+# Sadece wp-content içindeki temalar klasörü dahil
+!wordpress/wp-content/themes/
+# Sadece istediğin temalar eklensin:
 !wordpress/wp-content/themes/flatsome
 !wordpress/wp-content/themes/flatsome_child
 !wordpress/wp-content/themes/rosegarden
-
-# Sadece belirli pluginler (örnek: wp-codespace)
+# Pluginlerden sadece örnek plugin takip edilecekse ekle:
 # !wordpress/wp-content/plugins/wp-codespace
 
-# uploads, cache ve diğer içerikler ignore
+# uploads ve cache hariç tutulur
 wordpress/wp-content/uploads/
 wordpress/wp-content/cache/

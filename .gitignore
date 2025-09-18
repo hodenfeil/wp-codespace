@@ -1,3 +1,4 @@
+# Sistem & IDE dosyaları
 .DS_Store
 node_modules
 vendor
@@ -7,13 +8,21 @@ npm-debug.log
 package-lock.json
 composer.lock
 
+# WordPress çekirdek ve wp-content genel ignore
 wordpress/*
-!wordpress/wp-content
+!wordpress/wp-content/
 wordpress/wp-content/*
-!wordpress/wp-content/plugins
-wordpress/wp-content/plugins/*
-!wordpress/wp-content/plugins/wp-codespace
+!wordpress/wp-content/themes/
+!wordpress/wp-content/plugins/
 
-!wordpress/wp-content/themes
-wordpress/wp-content/themes/*
+# Sadece belirli temalar (dahil etmek istediklerinizi burada belirtin)
+!wordpress/wp-content/themes/flatsome
+!wordpress/wp-content/themes/flatsome_child
 !wordpress/wp-content/themes/rosegarden
+
+# Sadece belirli pluginler (örnek: wp-codespace)
+# !wordpress/wp-content/plugins/wp-codespace
+
+# uploads, cache ve diğer içerikler ignore
+wordpress/wp-content/uploads/
+wordpress/wp-content/cache/

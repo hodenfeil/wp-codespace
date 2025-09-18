@@ -1,0 +1,280 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 1.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+/* Add to Cart Button - 10px Rounded Corners */
+.single_add_to_cart_button,
+.add_to_cart_button,
+.button.add_to_cart_button,
+.single-product .single_add_to_cart_button,
+.woocommerce .button.single_add_to_cart_button {
+    border-radius: 10px !important;
+}
+
+/* Accordion Icon - Right Align After Description */
+.accordion .accordion-item .accordion-title {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.accordion .accordion-item .accordion-title .toggle {
+    order: 2 !important;
+    margin-left: auto !important;
+    transform: rotate(-90deg) !important; /* Point right when closed */
+    transition: transform 0.3s ease !important;
+}
+
+/* Accordion animation - open state (pointing down) */
+.accordion .accordion-item .accordion-title.active .toggle,
+.accordion .accordion-item .accordion-title[aria-expanded="true"] .toggle {
+    transform: rotate(0deg) !important; /* Point down when open */
+}
+
+/* =============================================== */
+/* SHOP NOW BUTTON VE QUANTITY FIELD CUSTOMIZATIONS */
+/* =============================================== */
+
+/* Quantity fieldları tamamen gizle */
+.single-product div.quantity,
+.single-product .quantity,
+.woocommerce div.product form.cart div.quantity,
+.woocommerce-page div.product form.cart div.quantity,
+.product-type-simple .quantity,
+.product-type-variable .quantity {
+    display: none !important;
+}
+
+/* Shop Now butonunu tam genişlik yap */
+.single-product .single_add_to_cart_button,
+.woocommerce div.product form.cart .button,
+.single_add_to_cart_button {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 10px !important;
+}
+
+/* Shop sayfasında buton stilleri */
+.woocommerce ul.products li.product .button,
+.woocommerce-page ul.products li.product .button,
+.add_to_cart_button {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Mini cart quantity gizle */
+.woocommerce-mini-cart .quantity,
+.mini_cart_item .quantity {
+    display: none !important;
+}
+
+/* Variable product select options sonrası buton */
+.variations_form .single_add_to_cart_button {
+    margin-top: 15px !important;
+}
+
+/* Cart form düzenlemeleri */
+.single-product form.cart {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Grouped products quantity gizle */
+.grouped_form .quantity,
+.woocommerce .grouped_form .quantity {
+    display: none !important;
+}
+
+/* Başlık espas */
+h1, h2, h3, h4, h5, h6, .heading-font, .banner h1, .banner h2 {
+    letter-spacing: -2px;
+}
+
+/* Başlık punto */
+.h1, h1 {
+    font-size: 2.5em;
+}
+
+
+@media only screen and (max-width: 48em) {
+/*************** ADD MOBILE ONLY CSS HERE  ***************/
+
+
+}
+
+
+
+
+
+
+/* ===================================================== */
+/* ACCORDION ICON RIGHT ALIGN (OVERRIDE PARENT THEME)    */
+/* ===================================================== */
+/* Amaç: Ok ikonunu (button.toggle) başlıktaki metnin sağına hizalamak.
+   Not: Parent tema muhtemelen float / pseudo-element kullanıyor. Bu nedenle
+   flex + float temizleme + pseudo ikonları kapatıyoruz. */
+.accordion .accordion-item .accordion-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: .5rem; /* küçük boşluk */
+}
+
+/* Varsayılan :before / :after ikonlarını kaldır (sadece gerçek <button> kalsın) */
+.accordion .accordion-item .accordion-title:before,
+.accordion .accordion-item .accordion-title:after {
+    content: none !important;
+}
+
+/* Metin alanı genişleyebilir olsun */
+.accordion .accordion-item .accordion-title .accordion-title-text {
+    order: 1 !important;
+    flex: 1 1 auto !important;
+}
+
+/* Ok ikonu sağa */
+.accordion .accordion-item .accordion-title .toggle {
+    order: 2 !important;
+    margin-left: auto !important;
+    float: none !important;
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kapalıyken sağa bakan, açılınca aşağı dönen animasyon (icon-angle-down kullanıldığı için) */
+.accordion .accordion-item .accordion-title .toggle {
+    transform: rotate(-90deg) !important; /* kapalı: sağ */
+    transition: transform .25s ease; 
+}
+.accordion .accordion-item .accordion-title.active .toggle,
+.accordion .accordion-item .accordion-title[aria-expanded="true"] .toggle {
+    transform: rotate(0deg) !important; /* açık: aşağı */
+}
+
+/* Dokunmatik hit alanını biraz büyüt (erişilebilirlik) */
+.accordion .accordion-item .accordion-title .toggle {
+    min-width: 2rem;
+    min-height: 2rem;
+}
+
+/* =============================================== */
+/* PAGE LAYOUT UX FIXES                           */
+/* =============================================== */
+/* Boş geniş alanlarda metin seçim highlight'ı ve text cursor hissini azalt */
+body, .site, .container, .row {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Metin seçilebilir olmalı dediğimiz alanlar için override */
+.entry-content, .product-info, .woocommerce-cart-form, .cart-collaterals, input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+/* Boş kenar alanlarında elle imleci yerine ok kalsın */
+body { cursor: default; }
+
+/* Form inputları yine beam cursor kullanmalı */
+input, textarea, select { cursor: text; }
+
+/* Cart otomatik update aktifken manuel update butonunu gizle (erişilebilir fallback için sadece görsel olarak) */
+/* Başlangıçta buton flicker'ını (görünüp kaybolma) engellemek için:
+    1) JS yüklenene kadar buton görünmez (visibility:hidden)
+    2) JS load sonrası body.js-cart-auto-update-active eklenir ve buton ekran dışına taşınır
+    3) Eğer JS gelmezse (class eklenmez) 200ms sonra fallback animasyonu visibility:visible yapar */
+/* İlk paint'te gizle (progressive enhancement yaklaşımı) */
+.woocommerce-cart-form button[name="update_cart"] { visibility:hidden; }
+/* JS feature flag geldiğinde ekran dışına taşı (SR erişimi koru) */
+body.js-cart-auto-update-active .woocommerce-cart-form button[name="update_cart"] {
+    visibility:visible; /* taşıma öncesi görünür olsa bile */
+    position: absolute;
+    left: -9999px; /* Ekrandan taşıyoruz, screen reader erişebilir */
+}
+/* JS yoksa (body class eklenmez) 200ms sonra görünür olsun */
+@keyframes showUpdateBtnFallback { to { visibility:visible; } }
+body:not(.js-cart-auto-update-active) .woocommerce-cart-form button[name="update_cart"] {
+    animation: showUpdateBtnFallback .2s steps(1,end) forwards;
+}
+
+/* İstersen tamamen kaldırmak için yukarıdaki blok yerine display:none kullanabilirsin ama o zaman klavye erişilebilir fallback kaybolur. */
+
+/* ===================================================== */
+/* CART 8/4 GRID LAYOUT                                 */
+/* ===================================================== */
+.cart-grid-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 8/4 benzeri oran */
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+.cart-grid-main { min-width: 0; }
+.cart-grid-side { position: sticky; top: 120px; }
+
+/* Sticky sadece geniş ekranlarda 1100px+ */
+@media (max-width: 1099px){
+    .cart-grid-side { position: static; top: auto; }
+}
+
+/* Küçük ekranlarda stack */
+@media (max-width: 900px){
+    .cart-grid-wrapper { grid-template-columns: 1fr; }
+    .cart-grid-side { position: static; top: auto; }
+}
+
+/* Flatsome bazı kapsayıcılarda genişlik sınırlıyorsa fazla boşluk durumunda tablo taşmasın */
+.cart-grid-main .shop_table { width: 100%; }
+
+/* Minus disabled görünümü */
+.quantity .minus.is-disabled,
+.quantity .minus[disabled] {
+    opacity: .35 !important;
+    cursor: not-allowed !important;
+    pointer-events: auto; /* tıklamada JS erken çıkıyor */
+}
+
+/* Inline status badge */
+.cart-inline-status {
+    font-size: .75rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+    color: #2f855a;
+    font-weight: 600;
+    transition: opacity .3s ease, transform .3s ease;
+    opacity:1;
+}
+.cart-inline-status[data-type="loading"] { color:#555; }
+.cart-inline-status[data-type="error"] { color:#b91c1c; }
+.cart-inline-status.is-hidden { opacity:0; height:0; margin:0; padding:0; overflow:hidden; }
+.cart-inline-status.is-fading { opacity:0; transform: translateY(-4px); }
+
+/* Checkout butonunu sağ sütunun üstüne taşırken ekstra görünürlük */
+.cart-grid-side .wc-proceed-to-checkout, .cart-grid-side .wc-proceed-to-checkout .checkout-button {
+    width:100%;
+}
+
+/* Orijinal alt kısımdaki proceed wrapper (varsa) gizlenebilir - istersen aç/kapat */
+/* Önceden kullanılan .cart-side-proceed kaldırıldı */
+
+
+
+
+
+
+
+
+
+
